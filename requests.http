@@ -1,0 +1,38 @@
+### Health
+GET http://localhost:3000/api/health
+
+### List seeded documents
+GET http://localhost:3000/api/documents
+
+### Re-run seed (needs GROQ_API_KEY)
+POST http://localhost:3000/api/documents/seed
+
+### Semantic search
+POST http://localhost:3000/api/search
+Content-Type: application/json
+
+{
+  "query": "how do I take vacation days?",
+  "limit": 3
+}
+
+### Ask with retrieved context
+POST http://localhost:3000/api/ask
+Content-Type: application/json
+
+{
+  "question": "What does the Growth plan include?",
+  "limit": 3
+}
+
+### Add a document
+POST http://localhost:3000/api/documents
+Content-Type: application/json
+
+{
+  "title": "Keyboard shortcuts",
+  "content": "Press C to create an issue, / to search, and G then B to open the current board.",
+  "metadata": {
+    "topic": "product"
+  }
+}
